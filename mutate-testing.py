@@ -6,8 +6,14 @@ from random import choice
 from random import seed
 
 """
+The python script reads a .py file and decompose the python code into AST.
+Then, it mutates the operators in the original file to create mutants for
+mutation testing.
+
 The first argument is the path to the python script you want to test.
 The second argument is the number of mutants you want to generate. 
+For example, "python mutation-testing.py ./fuzzywuzzy.py 10" will generate
+10 mutants of fuzzywuzzy.py. 
 """
 path = sys.argv[1]
 num = sys.argv[2]
