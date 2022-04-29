@@ -1,0 +1,13 @@
+#!bin/bash
+cp wireworld-original.c wireworld-test.c
+
+for i in $*; do
+	cat patch.$i | patch -p0 wireworld-test.c
+done
+
+gcc wireworld-test.c
+if [ $? -eq 1 ]; then
+	exit 1
+fi
+
+exit 0
